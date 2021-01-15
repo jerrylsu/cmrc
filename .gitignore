@@ -1,0 +1,4 @@
+data/cmrc2018/*
+data/predict/predicts_result.json
+log/*
+model/*
