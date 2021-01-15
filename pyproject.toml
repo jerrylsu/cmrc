@@ -1,6 +1,7 @@
+
 [tool.poetry]
 name = "cmrc"
-version = "0.1.0"
+version = "0.1.1"
 description = "Span-Extraction: Chinese Machine Reading Comprehension"
 authors = ["Jerry <sa517301@mail.ustc.edu.cn>"]
 

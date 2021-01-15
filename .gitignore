@@ -4,3 +4,4 @@ log/*
 model/*
 __pycache__
 dist
+*py.lock

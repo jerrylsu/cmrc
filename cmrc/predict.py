@@ -33,7 +33,7 @@ class Predicter:
                           tokenizer: BertTokenizer) -> List[str]:
         start_ids = torch.argmax(start_logits, dim=-1)
         end_ids = torch.argmax(end_logits, dim=-1)
-        return [''.join(tokenizer.convert_ids_to_tokens(input_id[start:end].numpy()))
+        return [''.join(tokenizer.convert_ids_to_tokens(input_id[start:end].numpy())).replace(" ##", "").replace("##", "")
                 for input_id, start, end in zip(input_ids, start_ids, end_ids)]
 
     def get_references(self) -> Tuple[List[str], List[List[str]]]:
