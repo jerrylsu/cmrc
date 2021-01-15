@@ -10,9 +10,9 @@ DATA_PATH = os.path.join(PROJECT_PATH, 'data')
 MODEL_PATH = os.path.join(PROJECT_PATH, 'model')
 LOG_PATH = os.path.join(PROJECT_PATH, 'log')
 # PRETRAINED_MODEL_PATH = 'hfl/chinese-roberta-wwm-ext'
-PRETRAINED_MODEL_PATH = '/home/yckj2939/project/yckj_project/KBQA/qag/src/pretrain/roberta/out_cmrc2018'
+PRETRAINED_MODEL_PATH = '/home/yckj2939/project/yckj_project/KBQA/qag/cmrc/pretrain/roberta/out_cmrc2018'
 sys.path.append(PROJECT_PATH)
-from src.dataset.cmrc2018.dataloader import CMRC2018
+from cmrc.dataset.cmrc2018.dataloader import CMRC2018
 
 
 def train(args):
@@ -45,7 +45,7 @@ if __name__ == '__main__':
     parser.add_argument("--data_path", type=str, default=DATA_PATH, help="Path of the dataset.")
     parser.add_argument("--model_path", type=str, default=MODEL_PATH, help="Path of the model.")
     parser.add_argument("--log_path", type=str, default=LOG_PATH, help="Path of the log.")
-    parser.add_argument("--data_script", type=str, default=os.path.join(PROJECT_PATH, 'src/dataset/cmrc2018/dataloader.py'), help="Path of the dataset.")
+    parser.add_argument("--data_script", type=str, default=os.path.join(PROJECT_PATH, 'cmrc/dataset/cmrc2018/dataloader.py'), help="Path of the dataset.")
     parser.add_argument("--train_file", type=str, default=os.path.join(DATA_PATH, 'cmrc2018/train.json'), help="Path of the dataset.")
     parser.add_argument("--validation_file", type=str, default=os.path.join(DATA_PATH, 'cmrc2018/dev.json'), help="Path of the dataset.")
     parser.add_argument("--max_length", type=int, default=512, help="Max length of input sentence")

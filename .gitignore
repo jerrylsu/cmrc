@@ -3,3 +3,4 @@ data/predict/predicts_result.json
 log/*
 model/*
 __pycache__
+dist

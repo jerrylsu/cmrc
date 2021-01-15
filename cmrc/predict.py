@@ -10,9 +10,9 @@ from tqdm import tqdm
 from typing import Optional, List, Any, Tuple
 from torch.utils.data import DataLoader
 
-from src.train import MODEL_PATH, DATA_PATH, PROJECT_PATH
-from src.dataset.cmrc2018.dataloader import CMRC2018
-from src.metrics.metrics import Metrics
+from cmrc.train import MODEL_PATH, DATA_PATH, PROJECT_PATH
+from cmrc.dataset.cmrc2018.dataloader import CMRC2018
+from cmrc.metrics.metrics import Metrics
 
 
 class Predicter:
@@ -82,7 +82,7 @@ if __name__ == '__main__':
                         help="Path of the dataset.")
     parser.add_argument("--data_script",
                         type=str,
-                        default=os.path.join(PROJECT_PATH, 'src/dataset/cmrc2018/dataloader.py'),
+                        default=os.path.join(PROJECT_PATH, 'cmrc/dataset/cmrc2018/dataloader.py'),
                         help="Path of the dataset.")
     parser.add_argument("--train_file",
                         type=str,
