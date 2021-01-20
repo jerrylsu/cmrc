@@ -1,5 +1,5 @@
 data/cmrc2018/*
-data/predict/predicts_result.json
+data/predict/*
 log/*
 model/*
 __pycache__

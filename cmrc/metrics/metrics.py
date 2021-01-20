@@ -118,3 +118,16 @@ class Metrics:
 	def to_json(self, obj: Any, save_file: str):
 		with open(save_file, 'w', encoding='utf-8') as fp:
 			json.dump(obj=obj, fp=fp, indent=4, ensure_ascii=False)
+
+
+if __name__ == "__main__":
+	res = json.load(open('../../data/predict/evaluate_results_9000.json', 'r', encoding='utf-8'))
+	answers, predicts = [], []
+	for item in res:
+		answers.append(item["target"])
+		predicts.append(item["result"])
+	metrics = Metrics()
+	f1, em = metrics.compute(references=answers, predictions=predicts)
+	metrics_result = f"F1: {round(f1, 3)}, EM: {round(em, 3)}"
+	print(metrics_result)
+	pass
