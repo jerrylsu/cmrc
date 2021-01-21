@@ -198,6 +198,7 @@ class CMRC2018:
     def __call__(self):
         self.datasets = self.datasets.filter(function=self._data_filter)
         self.datasets = self.datasets.map(function=self._encode)
-        #columns = ['input_ids', 'token_type_ids', 'attention_mask', 'start_positions', 'end_positions', 'answers', 'question']
-        #self.datasets.set_format(type='torch', columns=columns)
+        if self.args.model == "train":
+            columns = ['input_ids', 'token_type_ids', 'attention_mask', 'start_positions', 'end_positions', 'answers', 'question']
+            self.datasets.set_format(type='torch', columns=columns)
         return self.datasets

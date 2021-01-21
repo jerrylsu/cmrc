@@ -79,6 +79,7 @@ class Predicter:
 if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument("--max_length", type=int, default=512, help="Max length of input sentence")
+    parser.add_argument("--model", type=str, default="validation", help="Setting model for collate_fn.")
     parser.add_argument("--batch_size", type=int, default=32, help="Max length of input sentence")
     parser.add_argument("--data_path", type=str, default=DATA_PATH, help="Path of the dataset.")
     parser.add_argument("--predict_path",

@@ -37,7 +37,6 @@ def train(args):
     trainer = Trainer(model=model,
                       args=training_args,
                       train_dataset=datasets['train'],
-                      data_collator=custom_collate,
                       eval_dataset=datasets['validation'])
     trainer.train()
     trainer.save_model()
@@ -48,6 +47,7 @@ if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument("--data_path", type=str, default=DATA_PATH, help="Path of the dataset.")
     parser.add_argument("--model_path", type=str, default=MODEL_PATH, help="Path of the model.")
+    parser.add_argument("--model", type=str, default="train", help="Setting model for collate_fn.")
     parser.add_argument("--log_path", type=str, default=LOG_PATH, help="Path of the log.")
     parser.add_argument("--data_script", type=str, default=os.path.join(PROJECT_PATH, 'cmrc/dataset/cmrc2018/dataloader.py'), help="Path of the dataset.")
     parser.add_argument("--train_file", type=str, default=os.path.join(DATA_PATH, 'cmrc2018/train_test.json'), help="Path of the dataset.")
